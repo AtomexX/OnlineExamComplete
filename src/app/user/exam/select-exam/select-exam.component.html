@@ -1,0 +1,16 @@
+<div class="row"style="background-color: #404997; border-radius: 6mm;">
+    <div class="col-8 m-auto p-5">
+    <div class="card m-auto p-3"style="border-radius: 10mm;">
+    <div class="card-header " align="center" 
+        style="background-color: #76b7e6; border-radius: 5mm; margin-top: 1cm;">
+        <h3>Select Your Technology -</h3>
+    </div><br/>
+    <ng-container *ngFor="let subject of subjects ;let i=index"> 
+        <div>
+            <button  class ="btn btn-outline-primary" (click)="subjectSelected(i)">
+                {{subject}}
+            </button> 
+        </div>
+    </ng-container><br/><br/>
+    </div></div>
+</div>

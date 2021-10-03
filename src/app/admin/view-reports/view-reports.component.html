@@ -1,0 +1,76 @@
+<div class="col-8 m-auto ">
+  <div class="col-8 m-auto p-5"></div>
+  <div class="card m-auto p-5"style="border-radius: 10mm;">
+    
+<div class="card-header" align="center" 
+  style="background-color: #76b7e6;border-radius: 8mm;">
+  <h3>Search Reports</h3>
+</div>
+<div class="card-body" align="center">
+  <form #fetch="ngForm" >
+  <div class="form-group col-8">
+    <label for="subject"><b>Technology :  </b></label>
+    <input type="text" class="form-control" (input)="OnInput1($event)" name="student" ngModel required>
+  </div>
+  <div class="form-group col-8">
+    <label for="level"><b>Level :  </b></label>
+    <input type="text" class="form-control" (input)="OnInput2($event)" name="Level" ngModel required>
+  </div>
+  <div class="form-group col-8">
+    <label for="marks"><b>Marks:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput3($event)" name="marks" ngModel required>
+   </div>
+   <div class="form-group col-8">
+    <label for="state"><b>State:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput4($event)" name="state" ngModel required>
+   </div>
+   <div class="form-group col-8">
+    <label for="city"><b>City:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput5($event)" name="city" ngModel required>
+   </div>
+
+   <br>
+   <div class="text-center">
+    <button  (click)="searchStudent()" class="btn btn-outline-success">Search</button>
+   </div>
+   <br><br>
+   
+  </form>
+</div>
+
+</div>
+<div class="card m-auto p-5"style="border-radius: 10mm;">
+<div class="card-body" align="center">
+  <div class="card-header" align="center" 
+  style="background-color: #76b7e6;border-radius: 8mm;">
+  <h4>Search Result -</h4>
+</div>
+     <br><br>
+     <table class="gridtable" >
+         <tr >
+             <th>NAME</th><th>EMAIL-ID</th><th>MOBIE NUMBER</th><th>CITY</th><th>STATE</th>
+         </tr>
+        <tr *ngFor = " let student of studentsInfo">
+             <td>
+                 {{student.UserName}}
+             </td>
+  
+             <td>
+                 {{student.Email}}
+             </td>
+             <td>
+                 {{student.MobileNumber}}
+             </td>
+             <td>
+                 {{student.City}}
+             </td>
+             <td>
+                 {{student.State}}
+             </td>
+         </tr>
+  
+     </table></div></div>
+</div>
+
+
+

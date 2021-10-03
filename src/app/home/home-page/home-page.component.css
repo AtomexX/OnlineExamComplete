@@ -1,0 +1,11 @@
+.default-btn {
+    background-color: rgb(70, 120, 149);
+    border-radius: 2mm;
+    color: black;
+    font-size: large;
+    font-weight: 500;
+    width: 180px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+

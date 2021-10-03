@@ -1,0 +1,24 @@
+<div class="row " style="background-color: #404997; border-radius: 6mm;">
+    <div class="col-6 m-auto p-5 " >
+    <div class="card m-auto p-5"style="border-radius: 10mm;">
+        <div class="card-header" align="center" 
+            style="background-color: #76b7e6; border-radius: 8mm;">
+            <h3><p *ngIf="pass">CONGRATULATIONS!</p>
+            <p *ngIf="!pass">SORRY!</p></h3>
+        </div><br/>
+
+        <p style="text-align: left;">Your Score is:</p>
+        <p style="color: green; font-size: 1.5cm;">{{marks}}</p> 
+
+        <p *ngIf="pass">You have cleared level {{levelNum}}</p> <br/>
+        <p *ngIf="proceed"> You can proceed to level {{levelNum+1}} </p>
+        <p *ngIf="!pass"> You failed! You cannot proceed further </p>
+
+
+        <div class="wrapper">
+            <button *ngIf="proceed" class="btn btn-success" (click)="nextButton()">Next</button>
+            <button *ngIf="!proceed" class="btn btn-success" (click)="finishButton()">Finish Test</button>
+        </div>
+    </div></div>
+</div>
+

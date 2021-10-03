@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #505aaf; border-radius: 4mm;">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLinkActive="Active" routerLink="/" style="color: bisque;"><h2>Online-Examination</h2></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"  style="font-family: cursive;">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="m-1 btn btn-light btn-outline-primary"  routerLinkActive="Active" routerLink="/home-page"
+          >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="m-1 btn btn-light btn-outline-primary"  routerLinkActive="Active" routerLink="/about-us"
+          >About Us</a>
+        </li>   
+        <li *ngIf="!loggedin()" class="nav-item">
+          <a class="m-1 btn btn-light btn-outline-primary"  routerLinkActive="Active" routerLink="/admin/admin-login"
+          >Admin</a>
+        </li> 
+        <li  *ngIf="adminLoggedin()"  class="nav-item">
+          <div class="btn-group dropright">
+            <button type="button" class="m-1 btn btn-light btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Admin Profie
+            </button>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" routerLink="/admin/add-questions">Add Questions</a>
+              <a class="dropdown-item" routerLink="/admin/remove-questions">Remove Questions</a>
+              <a class="dropdown-item" routerLink="/admin/view-reports">Search Report</a>
+            </div>
+          </div>
+        </li>
+      
+      </ul>
+
+      <div>
+        <ul class="nav navbar-nav">
+          <li  *ngIf="loggedin()" class="nav-item" style="color: bisque; font-family: cursive;">
+            Welcome {{loggedInUser}}
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <ul class="nav navbar-nav">
+          <li  *ngIf="!loggedin()" class="nav-item">
+            <a class="m-1 btn btn-light btn-outline-primary" 
+            routerLink="user/login" routerLinkActive="Active" 
+            >Login</a>
+          </li>
+          
+          <li *ngIf="!loggedin()" class="nav-item">
+            <a class="m-1 btn btn-light btn-outline-primary" 
+            routerLink="user/register" routerLinkActive="Active" 
+            >Register</a>
+          </li>
+          
+          <li *ngIf="loggedin()" class="nav-item">
+            <a class="m-1 btn btn-light btn-outline-primary " (click)="onLogout()" 
+            >Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

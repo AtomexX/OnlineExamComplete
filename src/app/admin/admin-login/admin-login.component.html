@@ -1,0 +1,50 @@
+<div class="row"style="background-color: #404997; border-radius: 6mm;">
+  <div class="col-6 m-auto p-5">
+  <div class="card m-auto p-5"style="border-radius: 10mm;">
+    <div class="card-header" align="center" 
+    style="background-color: #76b7e6;border-radius: 8mm;">
+      <h3> Admin Login</h3>
+    </div>
+    <div class="card-body">
+      <form #loginForm='ngForm' (ngSubmit)="onLogin(loginForm)">
+        <div class="form-group col-12">
+          <label for="AdminID" class="form-label"><i class="fa fa-user icon"></i>Admin-ID</label>
+          <input type="text" class="form-control" placeholder="ID"
+           required ngModel name="AdminID" #AdminID="ngModel">
+          <div *ngIf="AdminID.invalid && (AdminID.dirty || AdminID.touched)" class="error-block">
+            <div *ngIf="AdminID.errors?.required" >
+              <small>**ID is required</small>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group col-12">
+          <label for="passwrod" class="form-label"><i class="fa fa-key icon"></i>Password</label>
+          <input type="password" class="form-control" placeholder="*******" 
+          required ngModel name="password" #password="ngModel">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-block">
+            <div *ngIf="password.errors?.required" >
+              <small>**Password is required</small>
+            </div>
+          </div>
+        </div><br/>
+        
+        <div class="form-group col-12">
+          <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" 
+          required ngModel name="captcha" #captcha="ngModel"> </ngx-recaptcha2>
+          <!-- <div *ngIf="captcha.invalid && captcha.touched" class="error-block">
+            <div *ngIf="captcha.errors?.required" >
+              Please check the captcha
+            </div>
+          </div> -->
+        </div>
+        
+        <div class="form-group col-12">
+          <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-outline-success">Login</button>
+          <button type="button" class="btn btn-outline-danger ml-2"style="float: right;">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>

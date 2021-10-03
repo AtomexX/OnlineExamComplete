@@ -1,0 +1,57 @@
+<br/>
+<br/>
+    <div class="jumbotron" style="background-color: #505aaf;">
+        <div class="container">
+            <h1 class="display-3">Welcome,</h1>
+            <p style="color:bisque;font-family: cursive;">If you want to test your knowledge on technical platforms, then this is a place where u can do it without any hassle.</p>
+            <div *ngIf="loggedin()" >
+                <p><a class="btn btn-primary btn-lg" role="button" routerLink="/user/exam/select-exam" 
+                    routerLinkActive="active"role="button"style="color: white;">Take Exam &raquo;</a></p>
+            </div>
+            <div *ngIf="!loggedin()" >
+                <p><a class="btn btn-success" (click)="onClick()" role="button"role="button"style="color: white;">Take Exam &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Admin</h2><br/>
+                <p style="color:bisque;font-family: cursive;">The feature to add diffrent questions on diffrent technology 
+                    as well as to check the report of the users appeared for the test can be done here.</p>
+                <div *ngIf="loggedin()" >
+                    <p><a class="btn btn-success"  routerLinkActive="Active" routerLink="/admin/admin-login"  role="button" style="color: white;">Admin &raquo;</a></p>
+                </div>
+                <div *ngIf="!loggedin()" >
+                    <p><a class="btn btn-success" (click)="onClick()" role="button" style="color: white;">Admin  &raquo;</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>User Report</h2><br/>
+                <p style="color:bisque;font-family: cursive;">If you have already given the test and want  to check your score 
+                    as well as if you are elisible for the next level test can be done here.</p>
+                <div *ngIf="loggedin()" >
+                    <p><a class="btn btn-success"  [routerLink]="['user/exam/result']" role="button"style="color: white;">User Report  &raquo;</a></p>
+                </div>
+                <div *ngIf="!loggedin()" >
+                    <p><a class="btn btn-success" (click)="onClick()" role="button"role="button"style="color: white;">User Report  &raquo;</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>New Exam</h2><br/>
+                <p style="color:bisque;font-family: cursive;">New here? And you want to test your knowleded on certain technology then you are inthe 
+                    right place. Here you can select diffrent technology that you want and enjoy the quiz.</p>
+                <div *ngIf="loggedin()" >
+                    <p><a class="btn btn-success"  routerLink="/user/exam/select-exam" 
+                        routerLinkActive="active" role="button"role="button"style="color: white;">New Exam  &raquo;</a></p>
+                </div>
+                <div *ngIf="!loggedin()" >
+                    <p><a class="btn btn-success" (click)="onClick()" role="button"role="button"style="color: white;">New Exam  &raquo;</a></p>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+

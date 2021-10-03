@@ -1,0 +1,57 @@
+<div class="col-8 m-auto ">
+  <div class="col-8 m-auto p-5"></div>
+  <div class="card m-auto p-5"style="border-radius: 10mm;">
+    
+<div class="card-header" align="center" 
+  style="background-color: #76b7e6;border-radius: 8mm;">
+  <h3>Add Questions</h3>
+</div>
+<div class="card-body" >
+  <form #AddQuestions="ngForm" (ngSubmit)="onSubmit(AddQuestions.value)">
+  <div class="form-group col-12">
+    <label for="Question"><b>Question:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput1($event)" name="Question" ngModel required>
+   </div>
+   <div class="form-group col-12">
+    <label for="Option1"><b>Option 1:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput2($event)" name="Option1" ngModel required>
+   </div>
+   <div class="form-group col-12">
+    <label for="Option2"><b>Option 2:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput3($event)" name="Option2" ngModel required>
+   </div>
+   <div class="form-group col-12">
+    <label for="Option3"><b>Option 3:  </b></label>
+    <input type="text" class="form-control"   (input)="OnInput4($event)" name="Option3" ngModel required>
+   </div>
+   <div class="form-group col-12">
+    <label for="Option4"><b>Option 4:  </b></label>
+    <input type="text" class="form-control"  (input)="OnInput5($event)" name="Option4" ngModel required>
+   </div>
+   <div class="form-group col-12">
+    <label for="CorrectAnswer"><b>Correct Answer:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput6($event)" name="CorrectAnswer" ngModel required>
+   </div>
+   <form #AddQuestions="ngForm" (ngSubmit)="onSubmitSub(AddQuestions.value)">
+   <div class="form-group col-12">
+    <label for="SubjectName"><b>Subject Name:  </b></label>
+    <input type="text" class="form-control" (input)="OnInput7($event)" name="SubjectName" ngModel required>
+    
+    <button  type="submit" class="btn btn-outline-secondary">Confirm Subject</button>
+  </div>
+</form>
+<form #AddQuestions="ngForm" (ngSubmit)="onSubmitLevel(AddQuestions.value)">
+  <div class="form-group col-12">
+    <label for="Level"><b>Level:  </b></label>
+    <input type="number" class="form-control" (input)="OnInput8($event)" name="Level" ngModel required>
+    <button  type="submit" class="btn btn-outline-secondary">Confirm Level</button>
+  </div>
+  </form>
+   <br>
+   <br>
+   <div class="text-center">
+    <button  type="submit" class="btn btn-outline-success" >Add Question</button>
+  </div>
+  </form>
+</div>
+</div></div>
